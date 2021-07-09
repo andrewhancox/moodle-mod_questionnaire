@@ -159,7 +159,10 @@ class mobile {
                         if ($question->supports_mobile()) {
                             $pagequestions[] = $question->mobile_question_display($qnum, $questionnaire->autonum);
                             $responses = array_merge($responses, $question->get_mobile_response_data($response));
-                            $qnum++;
+
+                            if ($question->type_id !== QUESSECTIONTEXT) {
+                                $qnum++;
+                            }
                         }
                     }
                     $data['prevpage'] = 0;
