@@ -160,7 +160,7 @@ class mobile {
                             $pagequestions[] = $question->mobile_question_display($qnum, $questionnaire->autonum);
                             $responses = array_merge($responses, $question->get_mobile_response_data($response));
 
-                            if ($question->type_id !== QUESSECTIONTEXT) {
+                            if ($question->type_id != QUESSECTIONTEXT) {
                                 $qnum++;
                             }
                         }
