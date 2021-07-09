@@ -257,7 +257,9 @@ class mobile {
                     $responses = array_merge($responses, $question->get_mobile_response_data($response));
                 }
             }
-            $qnum++;
+            if ($question->type_id != QUESSECTIONTEXT) {
+                $qnum++;
+            }
         }
 
         return ['pagequestions' => $pagequestions, 'responses' => $responses];
