@@ -131,6 +131,8 @@ class mobile {
                     }
                     $pagequestiondata = self::add_pagequestion_data($questionnaire, $pagenum, $response);
                     $data['pagequestions'] = $pagequestiondata['pagequestions'];
+                    $data['additionalinfo'] = format_text(file_rewrite_pluginfile_urls($questionnaire->survey->info, 'pluginfile.php',
+                            $context->id, 'mod_questionnaire', 'info', $questionnaire->survey->id), FORMAT_HTML, ['noclean' => true]);;
                     $responses = $pagequestiondata['responses'];
                     $numpages = count($questionnaire->questionsbysec);
                     // Set some variables we are going to be using.
